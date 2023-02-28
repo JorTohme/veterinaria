@@ -1,4 +1,4 @@
-export default function Login ({ setIsLogin }) {
+export default function Login ({ setToggleLoginScreen }) {
   return (
     <>
       <div>
@@ -28,7 +28,7 @@ export default function Login ({ setIsLogin }) {
         <div className='flex flex-col'>
           <p className='text-xs text-gray-500'>¿No está registrado?</p>
           <button
-            onClick={() => setIsLogin(false)}
+            onClick={() => setToggleLoginScreen(false)}
             className='text-cyan-600 font-semibold text-sm
             hover:text-cyan-500'
           > Registrarse
