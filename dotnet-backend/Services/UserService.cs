@@ -10,9 +10,9 @@ public static class UserService
   {
     Users = new List<User>
     {
-      new User { Name = "John", Password = "1234" },
-      new User { Name = "Jane", Password = "1234" },
-      new User { Name = "Bob", Password = "1234" }
+      new User { Name = "Jorge", Password = "1234", 
+      Pets = new List<Pet> { PetService.GetPet("Azul", "Jorge"), PetService.GetPet("Branco", "Jorge") },
+      Combos = new List<string> { "Alimento: 1.6kg, Complementos: 1" } },
     };
      
   }
@@ -25,5 +25,6 @@ public static class UserService
   }
 
   public static User GetUser(string name) => Users.FirstOrDefault(u => u.Name == name);
+
 
 }
