@@ -95,7 +95,7 @@ export default function PetScreen ({ user }) {
                     <p>Pedido: {combo}</p>
                   </div>
                 ))
-              }``
+              }
               </div>
             </div>
           </div>
