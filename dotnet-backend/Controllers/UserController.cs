@@ -15,7 +15,23 @@ namespace dotnet_backend.Controllers
         [HttpGet]
         public ActionResult<List<User>> GetUser() => UserService.GetAllUser();
 
-        
+        [HttpPost]
+        public IActionResult Create([FromHeader] User user)
+        {
+            UserService.AddUser(user);
+            return CreatedAtAction(nameof(GetUser), new { id = user.Name }, user);
+        }
+
+        [HttpGet("{user}")]
+        public ActionResult<User> GetUser(string user)
+        {
+            var isUser = UserService.GetUser(user);
+            if (isUser == null)
+            {
+                return NotFound();
+            }
+            return isUser;
+        }
 
     }
 }

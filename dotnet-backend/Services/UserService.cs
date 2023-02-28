@@ -18,4 +18,12 @@ public static class UserService
   }
 
   public static List<User> GetAllUser() => Users;
+
+  public static void AddUser(User user)
+  {
+    Users.Add(user);
+  }
+
+  public static User GetUser(string name) => Users.FirstOrDefault(u => u.Name == name);
+
 }
