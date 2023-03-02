@@ -19,6 +19,8 @@ Levantar el proyecto:
   1. Dentro de la carpeta dotnet-backend ejecutar `dotnet run`
   2. Dentro de la carpeta react-frontend ejecutar `npm run dev`
 
+  Por defecto, el backend se debería levantar en https://localhost:7172/{endpoint} y el frontend en http://localhost:5173/
+
 ## Cómo está hecho
 
 La parte del frontend está hecha en ReactJS con [ViteJS](https://vitejs.dev/) como bundler y [TailwindCSS](https://tailwindcss.com/) como framework de CSS para darle unos estilos sencillos sin complicarme con el CSS.
