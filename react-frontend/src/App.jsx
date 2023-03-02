@@ -7,10 +7,7 @@ import SellerScreen from './pages/SellerScreen'
 
 function App () {
   const [user, setUser] = useState()
-  // Comprueba que se haya iniciado sesión
-
   // Hay 3 pantallas, el Login en "/", la de mascotas en "/home" y la de vendedor en "/seller"
-
   /*
     Es obligatorio pasar por la pantalla de Login, en esta se puede seleccionar si el usuario es Vendedor o Cliente
     (Los usuarios clientes se pueden registrar en la pantalla de Login, los vendedores solo pueden registrarse por otro vendedor)
