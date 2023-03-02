@@ -22,4 +22,15 @@ public static class ComboService
 
   public static Combo GetCombo(string name, int orderNumber) => Combos.FirstOrDefault(u => u.User == name && u.orderNumber == orderNumber);
 
+  public static void UpdateCombo(Combo combo)
+  {
+      var index = Combos.FindIndex(u => u.User == combo.User && u.orderNumber == combo.orderNumber);
+      if (index == -1)
+      {
+          return;
+      }
+      Combos[index] = combo;
+      Database.Database.SaveCombos(Combos);
+  }
+
 }

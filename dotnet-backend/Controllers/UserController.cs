@@ -98,6 +98,7 @@ namespace dotnet_backend.Controllers
                 return NotFound();
             }
             isCombo.Dispatched = true;
+            ComboService.UpdateCombo(isCombo);
             return NoContent();
         }
 
