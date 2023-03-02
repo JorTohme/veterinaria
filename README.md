@@ -10,7 +10,7 @@ Requisitos:
 Instalación:
 
   1. Clonar el repositorio.
-  `git clone ...`
+  `git clone https://github.com/JorTohme/veterinaria`
   2. Dentro de la carpeta dotnet-backend ejecutar `dotnet restore`
   3. Dentro de la carpeta react-frontend ejecutar `npm install`
 
@@ -61,7 +61,7 @@ Usuario: `Vendedor` - Contraseña: `12345` - Rol: `Vendedor`
 
 ### Frontend
 
-El frontend está hecho en React usando Vite y estilando un poco con TailwindCSS. Se usan componentes para reutilizar y ordenar código y uso de React Router para manejar las rutas de la aplicación.
+El frontend está hecho en React usando Vite y estilando un poco con TailwindCSS. Se usan componentes para reutilizar y ordenar código y uso React Router para manejar las rutas de la aplicación.
 
 La página no es responsive al 100% porque no era requerimiento pero se puede ver en un celular sin problemas.
 Hay solo 3 rutas, este comentario en App.jsx lo resume:
