@@ -1,4 +1,5 @@
 using dotnet_backend.Models;
+using dotnet_backend.Database;
 
 namespace dotnet_backend.Services;
 
@@ -8,13 +9,7 @@ public static class UserService
 
   static UserService()
   {
-    Users = new List<User>
-    {
-      new User { Name = "Jorge", Password = "1234", 
-      Pets = new List<Pet> { PetService.GetPet("Azul", "Jorge"), PetService.GetPet("Branco", "Jorge") },
-      Combos = new List<string> { "Alimento: 1.6kg, Complementos: 1" } },
-    };
-     
+    Users = Database.Database.GetUsers();
   }
 
   public static List<User> GetAllUser() => Users;
@@ -22,9 +17,9 @@ public static class UserService
   public static void AddUser(User user)
   {
     Users.Add(user);
+    Database.Database.SaveUsers(Users);
   }
 
   public static User GetUser(string name) => Users.FirstOrDefault(u => u.Name == name);
-
 
 }

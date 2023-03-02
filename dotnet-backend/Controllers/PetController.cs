@@ -12,6 +12,7 @@ namespace dotnet_backend.Controllers
     {
         public PetController() { }
 
+        // Este endpoint devuelve todas las mascotas de la base de datos
         [HttpGet]
         public ActionResult<List<Pet>> GetPet() => PetService.GetAllPet();
         

@@ -8,12 +8,7 @@ public static class PetService
 
   static PetService()
   {
-    Pets = new List<Pet>
-    {
-      new Pet { Name = "Azul", Owner = "Jorge", Type = "Cat", Weight = 3.2, Age = 9, Castration = true },
-      new Pet { Name = "Branco", Owner = "Jorge", Type = "Dog", Weight = 2.5, Age = 5, Castration = false },
-    };
-     
+    Pets = Database.Database.GetPets();
   }
 
   public static Pet GetPet(string name, string OwnerName)
@@ -25,6 +20,12 @@ public static class PetService
   public static List<Pet> GetAllPet()
   {
     return Pets;
+  }
+
+  public static void AddPet(Pet pet)
+  {
+    Pets.Add(pet);
+    Database.Database.SavePets(Pets);
   }
 
 

@@ -1,11 +1,10 @@
 namespace dotnet_backend.Models
 
 {
-    public class User
+    public class Seller
     {
         public string? Name { get; set; }
         public string? Password { get; set; }
-        public List<Pet>? Pets { get; set; }
-        public List<Combo>? Combos { get; set; }
+        
     }
 }
