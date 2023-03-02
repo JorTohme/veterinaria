@@ -1,1 +1,1 @@
-[{"User":"Jorge","orderNumber":1,"Description":"Alimento: 1.75 kg. Complementos dietarios: 1 ","Dispatched":false},{"User":"Jorge","orderNumber":2,"Description":"Alimento: 4.08 kg. Complementos dietarios: 1 ","Dispatched":false}]
+[{"User":"Jorge","orderNumber":1,"Description":"Alimento: 1.75 kg. Complementos dietarios: 1 ","Dispatched":true},{"User":"Jorge","orderNumber":2,"Description":"Alimento: 4.08 kg. Complementos dietarios: 1 ","Dispatched":false}]
