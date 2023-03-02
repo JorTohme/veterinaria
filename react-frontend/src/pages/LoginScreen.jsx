@@ -3,7 +3,8 @@ import { useState } from 'react'
 import Login from '../components/Login'
 import Register from '../components/Register'
 
-export default function LoginScreen () {
+export default function LoginScreen ({ setUser, user }) {
+  // toggleLoginScreen es un booleano que indica si se muestra el login o el registro.
   const [toggleLoginScreen, setToggleLoginScreen] = useState(true)
 
   return (
@@ -13,7 +14,7 @@ export default function LoginScreen () {
       lg:h-3/6'
       >
         {
-          toggleLoginScreen ? <Login setToggleLoginScreen={setToggleLoginScreen} /> : <Register setToggleLoginScreen={setToggleLoginScreen} />
+          toggleLoginScreen ? <Login setToggleLoginScreen={setToggleLoginScreen} setUser={setUser} user={user} /> : <Register setToggleLoginScreen={setToggleLoginScreen} setUser={setUser} user={user} />
         }
       </div>
     </div>

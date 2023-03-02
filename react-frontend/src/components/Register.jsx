@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function Register ({ setToggleLoginScreen }) {
+export default function Register ({ setToggleLoginScreen, setUser }) {
+  const navigate = useNavigate()
   const [error, setError] = useState('')
 
   const handleSubmit = (e) => {
@@ -10,6 +12,7 @@ export default function Register ({ setToggleLoginScreen }) {
     const password = e.target[1].value
     const confirmPassword = e.target[2].value
     const pets = []
+    const combos = []
 
     // Comprueba que las contraseñas coincidan para evitar olvidar la contraseña por error de tipeo
     if (password !== confirmPassword) {
@@ -25,10 +28,19 @@ export default function Register ({ setToggleLoginScreen }) {
       body: JSON.stringify({
         name,
         password,
-        pets
+        pets,
+        combos
       })
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res) {
+          setUser({ name })
+          navigate('/home')
+        } else {
+          setError('Error al crear la cuenta')
+        }
+      }
+      )
       .catch(error => {
         console.log(error)
         setError('Error al conectarse con el servidor')
@@ -63,7 +75,7 @@ export default function Register ({ setToggleLoginScreen }) {
           </div>
           <br />
           <div className='flex justify-end'>
-            <button className='p-1 text-sm font-semibold bg-blue-300 rounded'> Registrarse </button>
+            <button className='px-4 py-2 text-sm text-white font-semibold rounded bg-blue-500 hover:bg-blue-700'> Registrarse </button>
           </div>
         </form>
       </div>
@@ -71,9 +83,10 @@ export default function Register ({ setToggleLoginScreen }) {
       {
         // Mostrar error si existe, si no existe no se renderiza nada
         error && (
-          <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4' role='alert'>
-            <p className='font-bold'>Error</p>
-            <p>{error}</p>
+          <div>
+            <p className='text-red-500 text-center'>
+              {error}
+            </p>
           </div>
         )
       }
