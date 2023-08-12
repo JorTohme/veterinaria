@@ -76,7 +76,7 @@ En la pantalla vendedor se pueden ver todos los combos pedidos - y despacharlos 
 se pueden ver todos los users de los vendedores y registrar a otro vendedor.
 
 En la pantalla de cliente se pueden ver las mascotas del usuario, los combos disponibles seleccionando una mascota,
-y los combos pedidos. También se pueden registrar mascotas."
+y los combos pedidos. También se pueden registrar mascotas.
 
 El calculo de los combos se hace en el frontend con los datos suministrados por el backend, no en el backend directamente.
 
